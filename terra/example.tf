@@ -10,11 +10,11 @@ provider "aws" {
   region = "${var.AWS_DEFAULT_REGION}"
 }
 
-resource "aws_instance" "example" {
-  ami = "ami-13be557e"
-  instance_type = "t2.micro"
-}
+module "consul" {
+    source = "github.com/hashicorp/consul/terraform/aws"
 
-resource "aws_eip" "ip" {
-    instance = "${aws_instance.example.id}"
+    key_name = "AWS SSH KEY NAME"
+    key_path = "PATH TO ABOVE PRIVATE KEY"
+    region = "us-east-1"
+    servers = "3"
 }
