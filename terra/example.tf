@@ -11,6 +11,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami = "ami-0d729a60"
+  ami = "ami-13be557e"
   instance_type = "t2.micro"
+}
+
+resource "aws_eip" "ip" {
+    instance = "${aws_instance.example.id}"
 }
