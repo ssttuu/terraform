@@ -5,7 +5,6 @@ module "user_stu" {
   username = "stu"
   iam_group = "${aws_iam_group.developers.id}"
   github_username = "stupschwartz"
-  github_team = "${github_team.Test4d3d3d3.id}"
 }
 
 module "user_jonathan" {
@@ -14,5 +13,4 @@ module "user_jonathan" {
   username = "jonathan"
   iam_group = "${aws_iam_group.developers.id}"
   github_username = "OstrichProjects"
-  github_team = "${github_team.Test4d3d3d3.id}"
 }
